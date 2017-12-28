@@ -8,3 +8,14 @@ pipeline:
     image: node
     commands:
       - npm install karma
+
+pipeline:
+  backend_2:
+    image: golang
+    commands:
+      - go build
+      - go test
+  frontend_2:
+    image: node
+    commands:
+      - npm install karma
