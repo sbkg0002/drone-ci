@@ -1,11 +1,12 @@
 pipeline:
-  build:
+  backend:
     image: golang
     commands:
       - go build
       - go test
-
-  publish:
-    image: plugins/docker
-    repo: foo/bar
-    tags: [ 1.0.0, 1.0, latest ]
+  frontend:
+    image: node
+    commands:
+      - npm install
+      - npm run test
+      - npm run build
